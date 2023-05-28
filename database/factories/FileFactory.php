@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\File;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends Factory<File>
+ */
+class FileFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->title,
+            'type' => 'mime/type',
+            'size' => '10MB',
+            'path' => fake()->filePath(),
+        ];
+    }
+}
